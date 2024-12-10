@@ -32,7 +32,16 @@ class QuestionTest extends StatelessWidget {
       /*
       * 컬럼 안에 로우로 이미지
       * 로우 벗어나서 컨테이너로 텍스트
-      *
+      * */
+
+      /*
+      * Container
+      *  - Layout widget 내에서 single child 를 가지는 위젯으로 분류 되어있다.
+      *  - child 를 하나만 가질 수 있다.
+      *  - Flutter 에서는 child 를 하나만 가질 수 있는 위젯과 여러 개 가질 수 있는 위젯이 있어 잘 알아두어야 한다.
+      * Container 의 큰 두가지 특징
+      *  1. child 가 없는 경우, 항상 최대 크기를 차지한다.
+      *  2. child 가 있는 경우, child 의 크기만큼 차지한다.
       * */
 
       body: Column(
@@ -52,7 +61,8 @@ class QuestionTest extends StatelessWidget {
           )
         ],
       ),
-      
+
+
       bottomNavigationBar: BottomAppBar(
         color: Colors.grey,
         child: Row(
