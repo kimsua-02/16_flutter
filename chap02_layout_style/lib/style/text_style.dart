@@ -16,7 +16,7 @@ class MyText extends StatelessWidget {
       body: Center(
         child: Text(
             "텍스트 스타일 적용",
-        style: TextStyle(color: Colors.purple, fontSize: 50),
+        style: TextStyle(color: Colors.purple),
           /*
           * color
           * Colors.red - 미리 정해진 색상표에서 고르는 법
