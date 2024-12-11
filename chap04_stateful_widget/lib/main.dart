@@ -28,11 +28,11 @@ class MyPage extends StatelessWidget {
       appBar: AppBar(
         title: Center(child: Text("Stateful Widget"),),
       ),
-      floatingActionButton:
+
+      body: foodfighter(),
       // 문제점 확인
         //StatelessTest(),
         //StatefulTest(),
-        foodfighter()
     );
   }
 }
