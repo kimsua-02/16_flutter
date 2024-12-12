@@ -11,8 +11,8 @@
 import 'package:chap05_dialog/dialog/02_alert_dialog.dart';
 import 'package:chap05_dialog/dialog/04_state_dialog.dart';
 import 'package:flutter/material.dart';
-
-import 'dialog/04_question.dart';
+import 'dialog/failure.dart';
+import 'dialog/04_question2.dart';
 
 void main(){
   runApp(const MyApp());
@@ -45,7 +45,8 @@ class MyDialog extends StatelessWidget {
         //DialogTest3(),
       //DialogTest4(),
       //DialogTest5(),
-      questionTest(),
+      //QuestionTest(),
+      QuestionTest2(),
     );
   }
 }
