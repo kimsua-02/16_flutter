@@ -1,11 +1,20 @@
 
 /*
+<<<<<<< HEAD
 *  - 카메라로 사진 촬영 시 이미지가 세로로 정렬됨. [미구현]
 *   -> 이미지가 세로로 정렬되려면 컬럼 안에 children 안에 맵 [미구현]
 *  - 이미지가 변수로 저장됨. [미구현]
 *  - 이미지 클릭 시 다이얼 로그로 '미리보기' 텍스트 넣음. [미구현]
 *  - 이미지 미리보기 는 다이얼 로그로 이미지 삭제 유무 지정 [미구현]
 *  - 이미지 촬영 후 등록 시 로딩 아이콘 뜨게 [미구현]
+=======
+*  - 카메라로 사진 촬영 시 이미지가 세로로 정렬됨. [구현]
+*   -> 이미지가 세로로 정렬되려면 컬럼 안에 children 안에 맵 [구현]
+*  - 이미지가 변수로 저장됨. [구현]
+*  - 이미지 클릭 시 다이얼 로그로 '미리보기' 텍스트 넣음. [구현]
+*  - 이미지 미리보기 는 다이얼 로그로 이미지 삭제 유무 지정 [구현]
+*  - 이미지 촬영 후 등록 시 로딩 아이콘 뜨게 [구현]
+>>>>>>> 9df37a0779fd945fc3d7e7e91cdd8377ff5d9c34
 *   -> bool isLoading = false;
 * */
 
@@ -63,8 +72,13 @@ class _State extends State<CameraQuestionPage> {
       });
     }
   }
+<<<<<<< HEAD
 // 이미지를 ㅅ ㅏ제할 때 확인 다이얼 로그
   void _shwoDeleteDialog(File image) {
+=======
+// 이미지를 삭제할 때 확인 다이얼 로그 메소드
+  void _showDeleteDialog(File image) {
+>>>>>>> 9df37a0779fd945fc3d7e7e91cdd8377ff5d9c34
     showDialog(context: context, builder: (context) {
       return AlertDialog(
         title: Text("image Delete"),
@@ -85,6 +99,30 @@ class _State extends State<CameraQuestionPage> {
     });
   }
 
+<<<<<<< HEAD
+=======
+  // 미리 보기 다이얼 로그
+  void _showDialog(File image) {
+    showDialog(context: context, builder: (context) {
+      return AlertDialog(
+        title: Text("미리보기"),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.file(image),
+            SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(onPressed: (){
+              _showDeleteDialog(image);
+            }, child: Text("이미지 삭제"))
+          ],
+        ),
+      );
+    });
+  }
+
+>>>>>>> 9df37a0779fd945fc3d7e7e91cdd8377ff5d9c34
   // 컬럼 안에 컬럼 버튼 버튼
   // 센터 안에 컬럼 안에 컬럼,버튼 버튼과 같이 있는 컬럼 안에 images.map
   @override
@@ -95,6 +133,7 @@ class _State extends State<CameraQuestionPage> {
         children: [
           _isLoading
             ? CircularProgressIndicator()
+<<<<<<< HEAD
             :
           SizedBox(height: 20,),
           // 갤러리에서 선택하는 버튼
@@ -103,6 +142,27 @@ class _State extends State<CameraQuestionPage> {
           // 카메라로 사진 찍는 버튼
           ElevatedButton(onPressed: _pickImageFromCamera, child: Text("카메라로 사진 찍기")),
           SizedBox(height: 20,)
+=======
+            : _images.isEmpty
+              ? Text("사진을 선택하세요")
+              : Column(
+            children: _images.map((image) {
+              return GestureDetector(
+                onTap: () => _showDialog(image),
+                child: Image.file(
+                  image,
+                  width: 100,
+                  height: 100,
+                ),
+              );
+            }).toList(),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(onPressed: _pickImageFromImage, child: Text("갤러리에서 사진 찍기")),
+          ElevatedButton(onPressed: _pickImageFromCamera, child: Text("카메라로 사진 찍기")),
+>>>>>>> 9df37a0779fd945fc3d7e7e91cdd8377ff5d9c34
         ],
       ),
     );
